@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alchemy</title>
+    <!-- ✅ Favicon for browser tab -->
+  <link rel="icon" href="apple-touch-icon.png" type="image/png">
+
+  <!-- ✅ Favicon for iPhone home screen -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alchemy">
+  <style>
+    body {
+      background: #ffffff;
+    }
+    h1 {
+      background: #424835;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px;
+    }
+    h2 {
+      background: #CDB256;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: left;
+      padding: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #4b7eb4;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍃 Alchemy Body Werks Task List 🍃</h1>
+
+  <!-- Each checkbox has a unique ID -->
+  <h2><input type="checkbox" id="task1"> Buy White Tent Canopy</h2>
+  <h2><input type="checkbox" id="task1"> Fix Pinterest Conversions</h2>
+  <h2><input type="checkbox" id="task1"> Pay GA Registered Agent</h2>
+  <h2><input type="checkbox" id="task1"> Take Lifestyle Photo for Faire</h2>
+  <h2><input type="checkbox" id="task1"> Launch TikTok Shop</h2>
+  <h2><input type="checkbox" id="task1"> Launch Amazon Storefront</h2>
+  <h2><input type="checkbox" id="task1"> Run Ad on Instagram</h2>
+  <h2><input type="checkbox" id="task1"> August 6th GVG Events Sip & Stroll at Galleria</h2>
+  <h2><input type="checkbox" id="task1"> September 3rd Chattahoochee Food Works Indie Market</h2>
+  
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const today = new Date().toLocaleDateString(); // Format: "MM/DD/YYYY"
+    const savedDate = localStorage.getItem('taskDate');
+
+    // Reset if the stored date is not today
+    if (savedDate !== today) {
+      localStorage.clear(); // clear previous checkboxes
+      localStorage.setItem('taskDate', today); // store today's date
+    }
+
+    checkboxes.forEach(checkbox => {
+      const id = checkbox.id;
+      const saved = localStorage.getItem(id);
+
+      // Load saved state if available
+      if (saved === 'true') {
+        checkbox.checked = true;
+      }
+
+      // Save new state on change
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(id, checkbox.checked);
+        localStorage.setItem('taskDate', today);
+      });
+    });
+  </script>
+</body>
+</html>
