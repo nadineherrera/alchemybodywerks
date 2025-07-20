@@ -1,6 +1,6 @@
 {
   "name": "Alchemy Daily Tasks",
-  "short_name": "Alchemy Tasks",
+  "short_name": "Alchemy",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -20,8 +20,9 @@
     {
       "src": "apple-touch-icon.png",
       "type": "image/png",
-      "sizes": "180x180",
-      "purpose": "any"
-    },
+      "sizes": "180x180"
+    }
   ]
 }
+
+
