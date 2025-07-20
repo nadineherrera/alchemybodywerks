@@ -5,28 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alchemy</title>
 
-  <!-- ✅ Favicon & Web App Meta (no favicon.ico) -->
+  <!-- ✅ Fix for GitHub Pages base path -->
+  <base href="/" />
+
+  <!-- ✅ Favicon & Web App Meta -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Alchemy">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <style>
     body {
       background: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1rem;
     }
     h1 {
       background: #424835;
-      font-family: Arial, sans-serif;
       color: #ffffff;
       text-align: center;
       padding: 15px;
+      margin: -1rem -1rem 1rem -1rem;
     }
     h2 {
       background: #CDB256;
-      font-family: Arial, sans-serif;
       color: #ffffff;
       text-align: left;
       padding: 15px;
@@ -34,6 +40,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      border-radius: 8px;
     }
     h2 input[type="checkbox"] {
       width: 20px;
@@ -45,7 +52,6 @@
 <body>
   <h1>🍃 Alchemy Body Werks Task List 🍃</h1>
 
-  <!-- ✅ Each checkbox now has a unique ID -->
   <h2><input type="checkbox" id="task1"> Order Supplies</h2>
   <h2><input type="checkbox" id="task2"> Make Harmony</h2>
   <h2><input type="checkbox" id="task3"> Make Gold</h2>
@@ -75,10 +81,9 @@
 
   <script>
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    const today = new Date().toLocaleDateString(); // Format: MM/DD/YYYY
+    const today = new Date().toLocaleDateString();
     const savedDate = localStorage.getItem('taskDate');
 
-    // Reset saved tasks if it's a new day
     if (savedDate !== today) {
       localStorage.clear();
       localStorage.setItem('taskDate', today);
@@ -88,12 +93,10 @@
       const id = checkbox.id;
       const saved = localStorage.getItem(id);
 
-      // Restore state
       if (saved === 'true') {
         checkbox.checked = true;
       }
 
-      // Save state on change
       checkbox.addEventListener('change', () => {
         localStorage.setItem(id, checkbox.checked);
         localStorage.setItem('taskDate', today);
