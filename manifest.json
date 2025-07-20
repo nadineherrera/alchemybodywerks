@@ -23,10 +23,5 @@
       "sizes": "180x180",
       "purpose": "any"
     },
-    {
-      "src": "favicon.ico",
-      "type": "image/x-icon",
-      "sizes": "48x48 64x64 96x96 128x128"
-    }
   ]
 }
