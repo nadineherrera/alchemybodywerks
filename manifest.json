@@ -1,0 +1,32 @@
+{
+  "name": "Alchemy Daily Tasks",
+  "short_name": "Alchemy Tasks",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#CDB256",
+  "description": "A clean and simple daily task app for Alchemy Body Werks.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "48x48 64x64 96x96 128x128"
+    }
+  ]
+}
