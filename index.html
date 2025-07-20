@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alchemy</title>
-    <!-- ✅ Favicon for browser tab -->
-  <link rel="icon" href="apple-touch-icon.png" type="image/png">
 
-  <!-- ✅ Favicon for iPhone home screen -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- ✅ Favicon & Web App Meta -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Alchemy">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
   <style>
     body {
       background: #ffffff;
@@ -43,58 +47,55 @@
 <body>
   <h1>🍃 Alchemy Body Werks Task List 🍃</h1>
 
-  <!-- Each checkbox has a unique ID -->
+  <!-- ✅ Each checkbox now has a unique ID -->
   <h2><input type="checkbox" id="task1"> Order Supplies</h2>
-  <h2><input type="checkbox" id="task1"> Make Harmony</h2>
-  <h2><input type="checkbox" id="task1"> Make Gold</h2>
-  <h2><input type="checkbox" id="task1"> Make Pure</h2>
-  <h2><input type="checkbox" id="task1"> Make Mocha</h2>
-  <h2><input type="checkbox" id="task1"> Make Massage Candles</h2>
-  <h2><input type="checkbox" id="task1"> Make Incense</h2>
-  <h2><input type="checkbox" id="task1"> Make Body Oils</h2>
-  <h2><input type="checkbox" id="task1"> Make Beard Boom</h2>
-  <h2><input type="checkbox" id="task1"> Buy White Tent Canopy</h2>
-  <h2><input type="checkbox" id="task1"> Find Events & Apply</h2>
-  <h2><input type="checkbox" id="task1"> Buy White Tent Canopy</h2>
-  <h2><input type="checkbox" id="task1"> Update Product Labels</h2>
-  <h2><input type="checkbox" id="task1"> Find Events & Apply</h2>
-  <h2><input type="checkbox" id="task1"> Make Retail Flyers</h2>
+  <h2><input type="checkbox" id="task2"> Make Harmony</h2>
+  <h2><input type="checkbox" id="task3"> Make Gold</h2>
+  <h2><input type="checkbox" id="task4"> Make Pure</h2>
+  <h2><input type="checkbox" id="task5"> Make Mocha</h2>
+  <h2><input type="checkbox" id="task6"> Make Massage Candles</h2>
+  <h2><input type="checkbox" id="task7"> Make Incense</h2>
+  <h2><input type="checkbox" id="task8"> Make Body Oils</h2>
+  <h2><input type="checkbox" id="task9"> Make Beard Boom</h2>
+  <h2><input type="checkbox" id="task10"> Buy White Tent Canopy</h2>
+  <h2><input type="checkbox" id="task11"> Find Events & Apply</h2>
+  <h2><input type="checkbox" id="task12"> Update Product Labels</h2>
+  <h2><input type="checkbox" id="task13"> Make Retail Flyers</h2>
+  <h2><input type="checkbox" id="task14"> Follow Up on Events with Chattahoochee Food Works and Georgia Vintage Goods</h2>
+  <h2><input type="checkbox" id="task15"> Make a List of Businesses to Scout for Retail</h2>
+  <h2><input type="checkbox" id="task16"> Create Letters & Sample Kits for Scouted Retail Businesses</h2>
+  <h2><input type="checkbox" id="task17"> Fix Pinterest Conversions</h2>
+  <h2><input type="checkbox" id="task18"> Put Together Oil Pourer</h2>
+  <h2><input type="checkbox" id="task19"> Put Together Bottle Sealer</h2>
+  <h2><input type="checkbox" id="task20"> Pay GA Registered Agent</h2>
+  <h2><input type="checkbox" id="task21"> Take Lifestyle Photo for Faire</h2>
+  <h2><input type="checkbox" id="task22"> Launch TikTok Shop</h2>
+  <h2><input type="checkbox" id="task23"> Launch Amazon Storefront</h2>
+  <h2><input type="checkbox" id="task24"> Run Ad on Instagram</h2>
+  <h2><input type="checkbox" id="task25"> August 6th GVG Events Sip & Stroll at Galleria</h2>
+  <h2><input type="checkbox" id="task26"> September 3rd Chattahoochee Food Works Indie Market</h2>
 
-  <h2><input type="checkbox" id="task1"> Follow Up on Events with Chattahoochee Food Works and Georgia Vintage Goods</h2>
-  <h2><input type="checkbox" id="task1"> Make a List of Businesses to Scout for Retail</h2>
-  <h2><input type="checkbox" id="task1"> Create Letters & Sample Kits for Scouted Retail Businesses</h2>
-  <h2><input type="checkbox" id="task1"> Fix Pinterest Conversions</h2>
-  <h2><input type="checkbox" id="task1"> Put Together Oil Pourer</h2>
-  <h2><input type="checkbox" id="task1"> Put Together Bottle Sealer</h2>
-  <h2><input type="checkbox" id="task1"> Pay GA Registered Agent</h2>
-  <h2><input type="checkbox" id="task1"> Take Lifestyle Photo for Faire</h2>
-  <h2><input type="checkbox" id="task1"> Launch TikTok Shop</h2>
-  <h2><input type="checkbox" id="task1"> Launch Amazon Storefront</h2>
-  <h2><input type="checkbox" id="task1"> Run Ad on Instagram</h2>
-  <h2><input type="checkbox" id="task1"> August 6th GVG Events Sip & Stroll at Galleria</h2>
-  <h2><input type="checkbox" id="task1"> September 3rd Chattahoochee Food Works Indie Market</h2>
-  
   <script>
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    const today = new Date().toLocaleDateString(); // Format: "MM/DD/YYYY"
+    const today = new Date().toLocaleDateString(); // Format: MM/DD/YYYY
     const savedDate = localStorage.getItem('taskDate');
 
-    // Reset if the stored date is not today
+    // Reset saved tasks if it's a new day
     if (savedDate !== today) {
-      localStorage.clear(); // clear previous checkboxes
-      localStorage.setItem('taskDate', today); // store today's date
+      localStorage.clear();
+      localStorage.setItem('taskDate', today);
     }
 
     checkboxes.forEach(checkbox => {
       const id = checkbox.id;
       const saved = localStorage.getItem(id);
 
-      // Load saved state if available
+      // Restore state
       if (saved === 'true') {
         checkbox.checked = true;
       }
 
-      // Save new state on change
+      // Save state on change
       checkbox.addEventListener('change', () => {
         localStorage.setItem(id, checkbox.checked);
         localStorage.setItem('taskDate', today);
